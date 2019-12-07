@@ -15,46 +15,46 @@ plt.title('Rental Predictions')
 plt.show()
 
  
-(3) Transformation and Modeling.
-(a) Describe 5 features you think play the biggest role in your model.
+## (3) Transformation and Modeling.
+### (a) Describe 5 features you think play the biggest role in your model.
 1- 'bedrooms', 
 2-'year_built', 
 3-'bathrooms', 
 4-'min_to_subway', 
 5-'size_sqft'
-• How did you create these features?
+### • How did you create these features?
 We created these features from the train data as we checked the most correlated ones to the rent using :
 corr = data.corr()
-• How do you know these features are playing key roles?
+### • How do you know these features are playing key roles?
 We know that these features are playing a key role as they are the most ones correlated to the rent. Also, the predicted values seem so realistic.
-(b) Describe how you are implementing your model. Why do you think this works well?
+### (b) Describe how you are implementing your model. Why do you think this works well?
 We chose to use Gradient Boosting Regressor because 
-(c) Describe your methodology for selecting your model. Why do you think this type of model works well?
+### (c) Describe your methodology for selecting your model. Why do you think this type of model works well?
 For the first task, we chose Random Forest because it creates decision trees on randomly selected data samples, gets a prediction from each tree and selects the best solution by means of voting. So on the first task, this model gave us the lowest MSE as it was lower than linear regression and decision tree.
 But for the second task, we first choose the Gradient Boosting Regressor because it builds trees one at a time, where each new tree helps to correct errors made by the previously trained tree. So this time we have tried this new model and we figured out that this better than the Random Forest model and also it gave as the lowest MSE.
 Then we chose the  K-Neighbour because we looked deeper for more models we found out the K-Neighbour give us MSE lower than the Gradient Boosting Regressor as K-Neighbour is used to predict values of any new data points that means that the new point is assigned a value based on how closely it resembles the points in the training set.
  
-(4) Metrics, Validation, and Evaluation.
-(a) How well do you think your model will perform on the holdout test set? How do you know?
+## (4) Metrics, Validation, and Evaluation.
+### (a) How well do you think your model will perform on the holdout test set? How do you know?
  
-(b) Is your model useful? Why or why not?
+### (b) Is your model useful? Why or why not?
 Yes, K-Neighbour is useful because it can be used for both classification and regression. The algorithm is simple and easy to implement.
-(c) Are there any special cases in which your model works particularly well or particularly poorly?
+### (c) Are there any special cases in which your model works particularly well or particularly poorly?
 K-Neighbour Works particularly well on nonlinear data and also it is much faster compared to other algorithms
 K-Neighbour Works particularly poorly as it is not suitable for large dimensional data and also It requires large memory for storing the entire training dataset for prediction.
-(d) Create at least one visualization that demonstrates the predictive power of your model.
+### (d) Create at least one visualization that demonstrates the predictive power of your model.
 data = pd.concat([train_df['rent'], train_df['addr_zip']], axis=1)
 f, ax = plt.subplots(figsize=(8, 6))
 fig = sns.boxplot(x='addr_zip', y="rent", data=data)
 fig.axis(ymin=0, ymax=60000);
 
  
-(5) Conclusion
-(a) How would you use this model?
+## (5) Conclusion
+### (a) How would you use this model?
 The model was built to predict rent, so I would use it to do that just for the next apartment I look for.
-(b) If you could have additional modeling features, what would they be?
+### (b) If you could have additional modeling features, what would they be?
 If we could have additional modeling features, they would be crime rates by zip code, nearby parks by zip code, rent history.
-(c) Would you rather have more data or more features?
+### (c) Would you rather have more data or more features?
 Well both, but more data would be more important, having 1000 features and 10 observations isn’t going to be better than having 1000 observations and 10 features. With more data we can make a better and more accurate prediction.
  
  
