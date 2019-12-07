@@ -16,7 +16,8 @@ One aspect that might be problematic is when the person who posted the apartment
 train_df[(train_df['addr_zip'] > 0) ].plot(x='addr_lon', y='addr_lat', kind='scatter', alpha=0.3, c='rent', cmap=plt.get_cmap("jet"), colorbar=True, figsize=(14,8) )
 plt.title('Rental Predictions')
 plt.show()
- 
+![]()
+
 ## (3) Transformation and Modeling.
 ### (a) Describe 5 features you think play the biggest role in your model.
 1- 'bedrooms', 
@@ -49,6 +50,7 @@ data = pd.concat([train_df['rent'], train_df['addr_zip']], axis=1)
 f, ax = plt.subplots(figsize=(8, 6))
 fig = sns.boxplot(x='addr_zip', y="rent", data=data)
 fig.axis(ymin=0, ymax=60000);
+![]()
  
 ## (5) Conclusion
 ### (a) How would you use this model?
