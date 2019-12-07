@@ -38,7 +38,7 @@ Then we chose the  K-Neighbour because we looked deeper for more models we found
  
 ## (4) Metrics, Validation, and Evaluation.
 ### (a) How well do you think your model will perform on the holdout test set? How do you know?
- 
+We believe that our model will perform well on the holdout test set, because of the features we use as they lead to a lower MSE overall.
 ### (b) Is your model useful? Why or why not?
 Yes, K-Neighbour is useful because it can be used for both classification and regression. The algorithm is simple and easy to implement.
 ### (c) Are there any special cases in which your model works particularly well or particularly poorly?
